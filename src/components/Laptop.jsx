@@ -92,14 +92,6 @@ const data = [
         coment: 2,
         price: 650,
     },
-    {
-        id: 10,
-        img: img,
-        title: "Lenovo V15 Core i3 12th Gen 1215U - (8 GB/512 GB SSD/Windows 11 Home) V15 G3 IAP Thin and Light Laptop",
-        grade: 3,
-        coment: 2,
-        price: 650,
-    },
 ]
 
 const Laptop = () => {
