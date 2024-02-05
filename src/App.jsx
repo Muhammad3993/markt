@@ -5,9 +5,9 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 // Pages
 import Home from "./pages/Home"
-import New from "./pages/New"
 import Category from "./pages/Category"
 import Accessoriess from "./pages/Accessoriess.jsx";
+import Cart from "./pages/Cart.jsx";
 
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path="/" exact element={<Home/>} />
-                <Route path="/new" exact element={<New/>} />
                 <Route path="/category" exact element={<Category/>} />
                 <Route path="/accessories" exact element={<Accessoriess/>} />
+                <Route path="/cart" exact element={<Cart/>} />
             </Routes>
             <Footer />
         </Router>

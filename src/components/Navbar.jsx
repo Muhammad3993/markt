@@ -157,7 +157,7 @@ const Navbar = () => {
                                 </i>
                                 <p className='nav_search'>search</p>
                             </div>
-                            <Link to={'/'} className="nav_icon">
+                            <Link to={'/cart'} className="nav_icon">
                                 <i className='nav_i'>
                                     <IoMdCart />
                                 </i>
