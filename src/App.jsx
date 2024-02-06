@@ -8,6 +8,7 @@ import Home from "./pages/Home"
 import Category from "./pages/Category"
 import Accessoriess from "./pages/Accessoriess.jsx";
 import Cart from "./pages/Cart.jsx";
+import Wishlist from "./pages/Wishlist.jsx";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/category" exact element={<Category/>} />
                 <Route path="/accessories" exact element={<Accessoriess/>} />
                 <Route path="/cart" exact element={<Cart/>} />
+                <Route path="/wishlist" exact element={<Wishlist/>} />
             </Routes>
             <Footer />
         </Router>

@@ -1279,6 +1279,24 @@ footer {
     color: var(--white);
 }
 
+/*WishlistPage*/
+.wishlist_page_products{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wishlist_page_products .smartphones_box_slide{
+    min-width: 240px;
+}
+
+.wishlist_page_products .smartphones_box_slide .sm_item_heart{
+    color: var(--red);
+}
+
 @media screen and (max-width: 1150px) {
 
     /* navbar */
@@ -1439,6 +1457,10 @@ footer {
         object-fit: contain;
     }
 
+    .wishlist_page_products .smartphones_box_slide{
+        min-width: 240px;
+        flex: 1;
+    }
 }
 
 @media screen and (max-width: 640px) {

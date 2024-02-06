@@ -163,7 +163,7 @@ const Navbar = () => {
                                 </i>
                                 <b>0</b>
                             </Link>
-                            <Link to={'/'} className="nav_icon">
+                            <Link to={'/wishlist'} className="nav_icon">
                                 <i className='nav_i'>
                                     <IoMdHeart />
                                 </i>
