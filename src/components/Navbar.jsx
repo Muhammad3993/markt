@@ -204,7 +204,7 @@ const Navbar = () => {
                                     }
                                 </div>
                             </div>
-                            <Link to={'/'} className="nav_sign_in">
+                            <Link to={'/login'} className="nav_sign_in">
                                 Log in
                             </Link>
                         </div>

@@ -140,7 +140,7 @@ const Smartphones = () => {
                                                 <img src={item.img} alt={item.img} />
                                             </div>
                                             <div className="smartphones_box_slide_text">
-                                                <Link to={'/'} className='smartphones_box_slide_text_title'>{item.title}</Link>
+                                                <Link to={'/detail'} className='smartphones_box_slide_text_title'>{item.title}</Link>
                                                 <div className="smartphones_box_slide_text_grade">
                                                     <i className='sm_icon'><FaStar /></i>
                                                     <p className='smartphones_box_slide_text_star'>{item.grade} <span>( {item.comment} Comments )</span></p>

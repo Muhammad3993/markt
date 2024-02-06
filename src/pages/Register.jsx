@@ -1,20 +1,26 @@
-// React router dom
-import {Link} from "react-router-dom";
-// Icons
-import {TbLock, TbUser} from "react-icons/tb";
+// Components
 
-const Login = () => {
+
+import {TbLock, TbMail, TbUser} from "react-icons/tb";
+import {Link} from "react-router-dom";
+
+const Register = () => {
     return (
         <div className="login">
             <div className="wrapper">
                 <span className="bg_animate"></span>
                 <div className="wrapper_form_box wrapper_login">
-                    <p className="wrapper_form_box_title">Login</p>
+                    <p className="wrapper_form_box_title">Sign Up</p>
                     <form action="#">
                         <div className="wrapper_input_box">
                             <input type="text" required/>
                             <label>Username</label>
                             <i><TbUser/></i>
+                        </div>
+                        <div className="wrapper_input_box">
+                            <input type="text" required/>
+                            <label>Email</label>
+                            <i><TbMail/></i>
                         </div>
                         <div className="wrapper_input_box">
                             <input type="password" required/>
@@ -23,7 +29,8 @@ const Login = () => {
                         </div>
                         <button className="wrapper_form_box_btn" type="submit">Login</button>
                         <div className="logrek_link">
-                            <p>Don`t have an account? <Link to="/register" className="register_link">Sign Up</Link></p>
+                            <p>Do you have an account? <Link to="/login" className="register_link">Sign In</Link>
+                            </p>
                         </div>
                     </form>
                 </div>
@@ -36,4 +43,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default Register;
