@@ -1285,6 +1285,7 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 40px;
 }
 
 .wishlist_page_products .smartphones_box_slide {
