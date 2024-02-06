@@ -1,10 +1,31 @@
-// Components
-
-
-import {TbLock, TbMail, TbUser} from "react-icons/tb";
+// Icons
+import { TbPhone, TbUser} from "react-icons/tb";
+// React Router dom
 import {Link} from "react-router-dom";
+// UseState
+import {useState} from "react";
 
 const Register = () => {
+    const [phoneNumber, setPhoneNumber] = useState('');
+
+    const handleInputChange = (e) => {
+        const inputPhoneNumber = e.target.value;
+        // Remove any non-digit characters
+        const formattedPhoneNumber = inputPhoneNumber.replace(/\D/g, '');
+        // Format the phone number as (+XXX) XXX-XX-XX
+        let formatted = '';
+        if (formattedPhoneNumber.length > 0) {
+            formatted = `+(998)`;
+        }
+        if (formattedPhoneNumber.length >= 4) {
+            formatted += ` ${formattedPhoneNumber.slice(3, 6)}`;
+        }
+        if (formattedPhoneNumber.length >= 7) {
+            formatted += `-${formattedPhoneNumber.slice(6, 10)}`;
+        }
+        setPhoneNumber(formatted);
+    };
+
     return (
         <div className="login">
             <div className="wrapper">
@@ -18,14 +39,16 @@ const Register = () => {
                             <i><TbUser/></i>
                         </div>
                         <div className="wrapper_input_box">
-                            <input type="text" required/>
-                            <label>Email</label>
-                            <i><TbMail/></i>
-                        </div>
-                        <div className="wrapper_input_box">
-                            <input type="password" required/>
-                            <label>Password</label>
-                            <i><TbLock/></i>
+                            <input required
+                                   type="text"
+                                   id="phoneNumber"
+                                   name="phoneNumber"
+                                   value={phoneNumber}
+                                   onChange={handleInputChange}
+                                   maxLength="15" // Limit the input to the formatted length (14 characters)
+                            />
+                            <label>Phone number</label>
+                            <i><TbPhone/></i>
                         </div>
                         <button className="wrapper_form_box_btn" type="submit">Login</button>
                         <div className="logrek_link">
