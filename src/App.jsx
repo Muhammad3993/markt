@@ -1,3 +1,5 @@
+//
+import { useEffect } from 'react';
 // React Router Dom
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 // Component
@@ -12,26 +14,37 @@ import Wishlist from "./pages/Wishlist.jsx";
 import Login from "./pages/Login.jsx";
 import Detail from "./pages/Detail.jsx";
 import Register from "./pages/Register.jsx";
+// initApi
+import {initApi} from "./data/initApi.js";
+
 
 
 function App() {
+useEffect(() => {
+const setInit = async () => {
+await initApi.getInit();
+}
+setInit();
+}, []);
 
-    return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" exact element={<Home/>} />
-                <Route path="/category" exact element={<Category/>} />
-                <Route path="/accessories" exact element={<Accessoriess/>} />
-                <Route path="/cart" exact element={<Cart/>} />
-                <Route path="/wishlist" exact element={<Wishlist/>} />
-                <Route path="/detail" exact element={<Detail/>} />
-                <Route path="/login" exact element={<Login/>} />
-                <Route path="/register" exact element={<Register/>} />
-            </Routes>
-            <Footer />
-        </Router>
-    )
+
+
+return (
+<Router>
+    <Navbar />
+    <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/category" exact element={<Category />} />
+        <Route path="/accessories" exact element={<Accessoriess />} />
+        <Route path="/cart" exact element={<Cart />} />
+        <Route path="/wishlist" exact element={<Wishlist />} />
+        <Route path="/detail" exact element={<Detail />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/register" exact element={<Register />} />
+    </Routes>
+    <Footer />
+</Router>
+)
 }
 
 export default App

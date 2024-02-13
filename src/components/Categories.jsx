@@ -3,46 +3,24 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 // React icons
 import { IoIosArrowRoundForward } from "react-icons/io";
-// img
-import img from "../images/img1.png";
-import img1 from "../images/img2.png";
-import img2 from "../images/img3.jpg";
 
-const data = [
-    {
-        id: 1,
-        img: img,
-        title: "Laptop",
-    },
-    {
-        id: 2,
-        img: img1,
-        title: "Smartphone",
-    },
-    {
-        id: 3,
-        img: img2,
-        title: "TV",
-    },
-];
-
-const Categories = () => {
+const Categories = ({data, name}) => {
     return (
         <div className='categories'>
             <div className="container">
                 <div className="categories_box">
                     <div className="categories_box_top">
-                        <p className='title'>Categories</p>
+                        <p className='title'>{name}</p>
                         <Link to={'/category'} className='cat_link'>Go to all <i className='cat_icon'><IoIosArrowRoundForward /></i></Link>
                     </div>
                     <div className="categories_box_body">
                         {
-                            data.map(item => (
+                            data.slice(0, 3).map(item => (
                                 <Link to={'/'} className="cat_box" key={item.id}>
                                     <div className="cat_box_img">
-                                        <img src={item.img} alt="" />
+                                        <img src={item.image} alt="" />
                                     </div>
-                                    <p className='cat_box_title'>{item.title}</p>
+                                    <p className='cat_box_title'>{item.name}</p>
                                 </Link>
                             ))
                         }

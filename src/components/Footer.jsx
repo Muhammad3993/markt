@@ -1,8 +1,24 @@
+// React
+import { useEffect, useState } from "react";
+// Api
+import { footerApi } from "../data/footerApi";
 // React Icons
 import { FaInstagram, FaTelegram, FaFacebook } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+
+  const [footerResponse, setFooterResponse] = useState(null);
+
+  useEffect(() => {
+      const getFooter = async () => {
+          const response = await footerApi.getFooter()
+          setFooterResponse(response);
+      }
+  
+      getFooter();
+  }, []);
+
   return (
     <footer>
       <div className="container">
@@ -31,17 +47,23 @@ const Footer = () => {
           <div className="footer_box_right">
             <div className="footer_box_right_column">
               <p className='footer_box_right_column_title'>Categories</p>
-              <Link to={'/'}>Laptop</Link>
-              <Link to={'/'}>Smartphone</Link>
-              <Link to={'/'}>Tv</Link>
-              <Link to={'/'}>Accessory</Link>
-              <Link to={'/'}>Other</Link>
+              {
+                footerResponse && footerResponse.categories.map(item => (
+                  <Link to={'/'} key={item.id}>
+                    {item.name}
+                  </Link>
+                ))
+              }
             </div>
             <div className="footer_box_right_column">
               <p className='footer_box_right_column_title'>Categories</p>
-              <Link to={'/'}>About</Link>
-              <Link to={'/'}>Delivery</Link>
-              <Link to={'/'}>Contact</Link>
+              {
+                footerResponse && footerResponse.pages.map(item => (
+                  <Link to={'/'} key={item.id}>
+                    {item.name}
+                  </Link>
+                ))
+              }
             </div>
           </div>
         </div>

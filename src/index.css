@@ -279,6 +279,7 @@ nav {
     text-align: left;
     padding: 5px 10px;
     border-radius: 5px;
+    text-transform: capitalize;
 }
 
 .nav_link:hover {
@@ -613,6 +614,7 @@ nav {
     font-weight: 600;
     line-height: 28px;
     letter-spacing: 0;
+    text-transform: capitalize;
 }
 
 .smartphones_box_slide {
@@ -720,6 +722,10 @@ nav {
     font-size: 19px;
     top: 15px;
     right: 15px;
+}
+
+.liked{
+    color: var(--red);
 }
 
 .slide_box .swiper-button-next,
@@ -1290,10 +1296,6 @@ footer {
 
 .wishlist_page_products .smartphones_box_slide {
     min-width: 240px;
-}
-
-.wishlist_page_products .smartphones_box_slide .sm_item_heart {
-    color: var(--red);
 }
 
 /* Details Page */

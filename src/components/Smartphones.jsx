@@ -13,93 +13,18 @@ import 'swiper/css/navigation';
 // import required modules
 import { FreeMode, Navigation } from 'swiper/modules';
 
-// img
-import img from "../images/img2.png"
+// Link
 import { Link } from 'react-router-dom';
 
-// data
-const data = [
-    {
-        id: 1,
-        img: img,
-        title: "IPhone 13 Pro Max",
-        grade: 5,
-        comment: 1,
-        price: 650,
-    },
-    {
-        id: 2,
-        img: img,
-        title: "IPhone 13 Pro Max",
-        grade: 4,
-        comment: 0,
-        price: 650,
-    },
-    {
-        id: 3,
-        img: img,
-        title: "IPhone 13 Pro Max",
-        grade: 3,
-        comment: 2,
-        price: 650,
-    },
-    {
-        id: 4,
-        img: img,
-        title: "IPhone 13 Pro Max",
-        grade: 3,
-        comment: 2,
-        price: 650,
-    },
-    {
-        id: 5,
-        img: img,
-        title: "IPhone 14 Pro Max",
-        grade: 3,
-        comment: 2,
-        price: 650,
-    },
-    {
-        id: 6,
-        img: img,
-        title: "IPhone 13 Pro Max",
-        grade: 3,
-        comment: 2,
-        price: 650,
-    },
-    {
-        id: 7,
-        img: img,
-        title: "IPhone 13 Pro Max",
-        grade: 3,
-        comment: 2,
-        price: 650,
-    },
-    {
-        id: 8,
-        img: img,
-        title: "IPhone 13 Pro Max",
-        grade: 3,
-        comment: 2,
-        price: 650,
-    },
-    {
-        id: 9,
-        img: img,
-        title: "IPhone 13 Pro Max",
-        grade: 3,
-        comment: 2,
-        price: 650,
-    },
-]
 
-const Smartphones = () => {
+
+const Smartphones = ({data, name}) => {
     return (
         <div className='smartphones'>
             <div className="container ">
                 <div className="smartphones_box">
                     <div className="categories_box_top">
-                        <p className='title'>Smartphones</p>
+                        <p className='title'>{name}</p>
                         <Link to={'/'} className='cat_link'>Go to all <i className='cat_icon'><IoIosArrowRoundForward/></i></Link>
                     </div>
                     <div className="slide_box">
@@ -137,7 +62,7 @@ const Smartphones = () => {
                                     <SwiperSlide key={item.id}>
                                         <div className="smartphones_box_slide" >
                                             <div className="smartphones_box_slide_img">
-                                                <img src={item.img} alt={item.img} />
+                                                <img src={item.image} alt={item.image} />
                                             </div>
                                             <div className="smartphones_box_slide_text">
                                                 <Link to={'/detail'} className='smartphones_box_slide_text_title'>{item.title}</Link>
@@ -153,7 +78,7 @@ const Smartphones = () => {
                                                     </button>
                                                 </div>
                                             </div>
-                                            <button className="sm_item_heart">
+                                            <button className={item.liked === false ? "sm_item_heart" : "sm_item_heart liked"}>
                                                 <ip><FaHeart /></ip>
                                             </button>
                                         </div>
